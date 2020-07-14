@@ -20,6 +20,7 @@ func newSettingsRootViewController(
         nav.tabBarItem.title = NSLocalizedString("Settings", comment: "")
         nav.tabBarItem.image = UIImage(named: "tab-gear").withRenderingMode(.alwaysOriginal)
         nav.tabBarItem.selectedImage = UIImage(named: "tab-gear-selected").withRenderingMode(.alwaysOriginal)
+        nav.tabBarItem.accessibilityIdentifier = AccessibilityIds.settingsTabBarItem.rawValue
     }
 
     return nav
@@ -35,6 +36,7 @@ func newNotificationsRootViewController(client: GithubClient) -> UIViewControlle
     nav.tabBarItem.title = title
     nav.tabBarItem.image = UIImage(named: "tab-inbox").withRenderingMode(.alwaysOriginal)
     nav.tabBarItem.selectedImage = UIImage(named: "tab-inbox-selected").withRenderingMode(.alwaysOriginal)
+    nav.tabBarItem.accessibilityIdentifier = AccessibilityIds.inboxTabBarItem.rawValue
     return nav
 }
 
@@ -44,6 +46,7 @@ func newSearchRootViewController(client: GithubClient) -> UIViewController {
     nav.tabBarItem.title = Constants.Strings.search
     nav.tabBarItem.image = UIImage(named: "tab-search").withRenderingMode(.alwaysOriginal)
     nav.tabBarItem.selectedImage = UIImage(named: "tab-search-selected").withRenderingMode(.alwaysOriginal)
+    nav.tabBarItem.accessibilityIdentifier = AccessibilityIds.searchTabBarItem.rawValue
     return nav
 }
 
@@ -70,6 +73,7 @@ func newBookmarksRootViewController(client: GithubClient) -> UIViewController {
     let nav = UINavigationController(rootViewController: controller)
     nav.tabBarItem.image = UIImage(named: "tab-bookmark").withRenderingMode(.alwaysOriginal)
     nav.tabBarItem.selectedImage = UIImage(named: "tab-bookmark-selected").withRenderingMode(.alwaysOriginal)
+    nav.tabBarItem.accessibilityIdentifier = AccessibilityIds.bookmarksTabBarItem.rawValue
     nav.tabBarItem.title = title
     return nav
 }

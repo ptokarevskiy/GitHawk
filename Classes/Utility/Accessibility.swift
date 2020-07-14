@@ -42,3 +42,20 @@ private extension AccessibilityHelper {
 var trueUnlessReduceMotionEnabled: Bool {
     return !UIAccessibilityIsReduceMotionEnabled()
 }
+
+enum AccessibilityIds: String {
+    case gitHubSignInButton = "GitHub SignIn"
+    case personalTokenLoginButton = "Login with PAT"
+    case loginViewController = "Login View"
+    case personalTokenTextField = "Token TextField"
+    case errorAlertView = "Error Alert"
+    case whatsNewContentView = "Whats New View"
+    case closeWhatsNewButton = "Close Whats New Button"
+    case zeroInboxContentView = "Zero Inbox ContentView"
+    case missingNotificationsButton = "Missing Notifications Button"
+    case settingsTabBarItem = "Settings TabBar Button"
+    case bookmarksTabBarItem = "Bookmarks TabBar Button"
+    case searchTabBarItem = "Search TabBar Button"
+    case inboxTabBarItem = "Inbox TabBar Button"
+    case feedCollectionView = "Feed CollectionView"
+}

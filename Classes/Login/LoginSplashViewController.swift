@@ -33,6 +33,7 @@ final class LoginSplashViewController: UIViewController {
 
     @IBOutlet weak var splashView: SplashView!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var personalTokenButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private weak var delegate: LoginSplashViewControllerDelegate?
 
@@ -69,6 +70,9 @@ final class LoginSplashViewController: UIViewController {
         state = .idle
         signInButton.layer.cornerRadius = Styles.Sizes.cardCornerRadius
         signInButton.addTouchEffect()
+        signInButton.accessibilityIdentifier = AccessibilityIds.gitHubSignInButton.rawValue
+        personalTokenButton.accessibilityIdentifier = AccessibilityIds.personalTokenLoginButton.rawValue
+        view.accessibilityIdentifier = AccessibilityIds.loginViewController.rawValue
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -130,6 +134,7 @@ final class LoginSplashViewController: UIViewController {
 
         alert.addTextField { (textField) in
             textField.placeholder = NSLocalizedString("Personal Access Token", comment: "")
+            textField.accessibilityIdentifier = AccessibilityIds.personalTokenTextField.rawValue
         }
 
         alert.addActions([
@@ -162,6 +167,7 @@ final class LoginSplashViewController: UIViewController {
             message: NSLocalizedString("There was an error signing in to GitHub. Please try again.", comment: ""),
             preferredStyle: .alert
         )
+        alert.view.accessibilityIdentifier = AccessibilityIds.errorAlertView.rawValue
         alert.addAction(AlertAction.ok())
         present(alert, animated: trueUnlessReduceMotionEnabled)
     }

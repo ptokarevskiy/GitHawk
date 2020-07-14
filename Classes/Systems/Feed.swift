@@ -57,7 +57,7 @@ final class Feed: NSObject, UIScrollViewDelegate {
         self.collectionView.backgroundColor = Styles.Colors.background
         self.collectionView.refreshControl = feedRefresh.refreshControl
         self.collectionView.keyboardDismissMode = .onDrag
-        self.collectionView.accessibilityIdentifier = "feed-collection-view"
+        self.collectionView.accessibilityIdentifier = AccessibilityIds.feedCollectionView.rawValue
         feedRefresh.refreshControl.addTarget(self, action: #selector(Feed.onRefresh(sender:)), for: .valueChanged)
 
         self.loadingView.accessibilityIdentifier = "feed-loading-view"

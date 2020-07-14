@@ -37,6 +37,7 @@ final class NewFeaturesCell: UICollectionViewCell {
         contentView.layer.cornerRadius = Styles.Sizes.cardCornerRadius
         contentView.layer.borderWidth = 1 / UIScreen.main.scale
         contentView.layer.borderColor = Styles.Colors.blueGray.color.cgColor
+        contentView.accessibilityIdentifier = AccessibilityIds.whatsNewContentView.rawValue
 
         contentView.addSubview(label)
         contentView.addSubview(closeButton)
@@ -52,6 +53,7 @@ final class NewFeaturesCell: UICollectionViewCell {
         closeButton.layer.cornerRadius = closeButtonSize / 2
         closeButton.addTarget(self, action: #selector(onCloseButton), for: .touchUpInside)
         closeButton.accessibilityLabel = NSLocalizedString("Dismiss new feature modal", comment: "")
+        closeButton.accessibilityIdentifier = AccessibilityIds.closeWhatsNewButton.rawValue
 
         label.snp.makeConstraints { make in
             make.centerY.equalToSuperview()

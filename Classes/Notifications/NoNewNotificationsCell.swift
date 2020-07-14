@@ -61,10 +61,12 @@ final class NoNewNotificationsCell: UICollectionViewCell {
 
         contentView.isAccessibilityElement = true
         contentView.accessibilityLabel = NSLocalizedString("You have no new notifications!", comment: "Inbox Zero Accessibility Label")
+        contentView.accessibilityIdentifier = AccessibilityIds.zeroInboxContentView.rawValue
 
         //configure reviewGitHubAcess button
         reviewGitHubAccessButton.setTitle(NSLocalizedString("Missing notifications?", comment: ""), for: .normal)
-        reviewGitHubAccessButton.isAccessibilityElement = false
+        reviewGitHubAccessButton.isAccessibilityElement = true
+        reviewGitHubAccessButton.accessibilityIdentifier = AccessibilityIds.missingNotificationsButton.rawValue
         reviewGitHubAccessButton.titleLabel?.textAlignment = .center
         reviewGitHubAccessButton.backgroundColor = .clear
         reviewGitHubAccessButton.titleLabel?.font = Styles.Text.finePrint.preferredFont
