@@ -23,6 +23,9 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
   - GitHawkRoutes (0.1.1)
   - GitHubAPI (0.1.0):
     - Alamofire (~> 4.8)
@@ -41,6 +44,12 @@ PODS:
     - FLAnimatedImage (~> 1.0.12)
     - NYTPhotoViewer/Core
   - NYTPhotoViewer/Core (2.0.0)
+  - SBTUITestTunnelClient (6.4.0):
+    - SBTUITestTunnelCommon
+  - SBTUITestTunnelCommon (6.4.0)
+  - SBTUITestTunnelServer (6.4.0):
+    - GCDWebServer (~> 3.0)
+    - SBTUITestTunnelCommon
   - SDWebImage/Core (4.0.0)
   - SDWebImage/GIF (4.0.0):
     - FLAnimatedImage (~> 1.0)
@@ -66,6 +75,7 @@ DEPENDENCIES:
   - FlatCache (from `https://github.com/GitHawkApp/FlatCache.git`, branch `master`)
   - FLEX (~> 2.0)
   - FMDB
+  - GCDWebServer
   - GitHawkRoutes (from `https://github.com/GitHawkApp/GitHawkRoutes.git`, branch `master`)
   - GitHubAPI (from `Local Pods/GitHubAPI`)
   - GitHubSession (from `Local Pods/GitHubSession`)
@@ -75,6 +85,8 @@ DEPENDENCIES:
   - ImageAlertAction
   - MessageViewController (from `https://github.com/GitHawkApp/MessageViewController.git`, branch `master`)
   - NYTPhotoViewer/AnimatedGifSupport (~> 2.0.0)
+  - SBTUITestTunnelClient
+  - SBTUITestTunnelServer
   - SDWebImage/GIF (~> 4.0.0)
   - SnapKit (~> 4.2)
   - Squawk (from `https://github.com/GitHawkApp/Squawk.git`, branch `master`)
@@ -96,9 +108,13 @@ SPEC REPOS:
     - FLAnimatedImage
     - FLEX
     - FMDB
+    - GCDWebServer
     - HTMLString
     - ImageAlertAction
     - NYTPhotoViewer
+    - SBTUITestTunnelClient
+    - SBTUITestTunnelCommon
+    - SBTUITestTunnelServer
     - SDWebImage
     - SnapKit
     - SwiftLint
@@ -194,6 +210,7 @@ SPEC CHECKSUMS:
   FlatCache: 97ef13ece2ddc5445679c957e2c1f9dd448ab96b
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   GitHawkRoutes: 468138c117a6fbe79bdd9ba7390bf45d363bc69b
   GitHubAPI: 1becfe6ad87d6afcbeb433f6f28c6f1253a471be
   GitHubSession: 3c6466abb32644f37995bd58bb209751476ff3e9
@@ -203,6 +220,9 @@ SPEC CHECKSUMS:
   ImageAlertAction: 59e1652decdaa1d1ad2d12f35cd7223b7a4f7bcc
   MessageViewController: 4d5bb8873d04ec1d727b3d1dc11d5e48b08bb6d4
   NYTPhotoViewer: 34b8bd6bcc297466adec1668f9a01249d73c90e6
+  SBTUITestTunnelClient: d22f9efb262a948aa253d568817d57ac959ac548
+  SBTUITestTunnelCommon: 309340ba9813445a58d81f7db50819cea0f2da45
+  SBTUITestTunnelServer: 20dc833de9a8aab531e66e473486983f7c339bca
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Squawk: 7dbe029a1de47153a1722a98b787f755f2df2b3e
@@ -213,6 +233,6 @@ SPEC CHECKSUMS:
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   XLPagerTabStrip: 63166e21c9844fa30f2d95d30f335e73be5caf22
 
-PODFILE CHECKSUM: cf0ce80cca649d88e981700676ce999f6eeca8bc
+PODFILE CHECKSUM: cceb4cca62bd1aed81827a797ae9c0fa42653ddf
 
 COCOAPODS: 1.6.1

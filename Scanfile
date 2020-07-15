@@ -1,0 +1,4 @@
+scheme("GitHawk-Debug")
+devices ["iPhone 11 Pro"]
+clean(true)
+output_types("html")

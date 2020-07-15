@@ -1,11 +1,16 @@
 import XCTest
 
 final class InboxPage: Page, TabBar {
+    
     private let missingNotificationsButton = Page.app.buttons[AccessibilityIds.missingNotificationsButton.rawValue].firstMatch
     private let zeroInboxContentView = Page.app.otherElements[AccessibilityIds.zeroInboxContentView.rawValue].firstMatch
     private let feedCollectionView = Page.app.collectionViews[AccessibilityIds.feedCollectionView.rawValue].firstMatch
     private let whatsNewContentView = Page.app.otherElements[AccessibilityIds.whatsNewContentView.rawValue].firstMatch
     private let closeWhatsNewButton = Page.app.collectionViews.cells.buttons[AccessibilityIds.closeWhatsNewButton.rawValue].firstMatch
+    
+    override func waitForPageExistance() {
+        feedCollectionView.wait(.exists, withIn: 3)
+    }
     
     var feedCellsCount: Int {
         return Page.app.collectionViews.cells.count

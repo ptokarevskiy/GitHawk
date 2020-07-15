@@ -78,6 +78,7 @@ class SearchViewController: UIViewController,
         view.backgroundColor = Styles.Colors.background
 
         view.addSubview(collectionView)
+        view.accessibilityIdentifier = AccessibilityIds.searchViewController.rawValue
         adapter.collectionView = collectionView
         adapter.dataSource = self
 

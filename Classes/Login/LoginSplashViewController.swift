@@ -70,9 +70,7 @@ final class LoginSplashViewController: UIViewController {
         state = .idle
         signInButton.layer.cornerRadius = Styles.Sizes.cardCornerRadius
         signInButton.addTouchEffect()
-        signInButton.accessibilityIdentifier = AccessibilityIds.gitHubSignInButton.rawValue
-        personalTokenButton.accessibilityIdentifier = AccessibilityIds.personalTokenLoginButton.rawValue
-        view.accessibilityIdentifier = AccessibilityIds.loginViewController.rawValue
+        setupAccessibility()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -176,4 +174,13 @@ final class LoginSplashViewController: UIViewController {
         splashView.configureView()
     }
 
+}
+
+// MARK: Accessibility
+extension LoginSplashViewController {
+    fileprivate func setupAccessibility() {
+        signInButton.accessibilityIdentifier = AccessibilityIds.gitHubSignInButton.rawValue
+        personalTokenButton.accessibilityIdentifier = AccessibilityIds.personalTokenLoginButton.rawValue
+        view.accessibilityIdentifier = AccessibilityIds.loginViewController.rawValue
+    }
 }

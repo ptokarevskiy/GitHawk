@@ -24,6 +24,8 @@ def testing_pods
   pod 'XLPagerTabStrip', '~> 8.1'
   pod 'ImageAlertAction'
   pod 'FMDB'
+  pod 'SBTUITestTunnelServer'
+  pod 'GCDWebServer', :inhibit_warnings => true
 
   # prerelease pods
   pod 'IGListKit/Swift', :git => 'https://github.com/GitHawkApp/IGListKit.git', :branch => 'fix-layout-insets'
@@ -75,6 +77,13 @@ target 'FreetimeTests' do
   session_pods
   testing_pods
 
+end
+
+target 'FreetimeUITests' do
+  
+  platform :ios, '11.0'
+  
+  pod 'SBTUITestTunnelClient'
 end
 
 post_install do |installer|

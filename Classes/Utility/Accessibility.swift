@@ -40,13 +40,17 @@ private extension AccessibilityHelper {
 // MARK: Reduce motion
 
 var trueUnlessReduceMotionEnabled: Bool {
-    return !UIAccessibilityIsReduceMotionEnabled()
+    return !UIAccessibility.isReduceMotionEnabled
 }
 
 enum AccessibilityIds: String {
     case gitHubSignInButton = "GitHub SignIn"
     case personalTokenLoginButton = "Login with PAT"
-    case loginViewController = "Login View"
+    case loginViewController = "Login ViewController"
+    case searchViewController = "Search ViewController"
+    case searchBar = "Search Bar"
+    case settingsViewController = "Settings ViewController"
+    case signOutCell = "SignOut Cell"
     case personalTokenTextField = "Token TextField"
     case errorAlertView = "Error Alert"
     case whatsNewContentView = "Whats New View"

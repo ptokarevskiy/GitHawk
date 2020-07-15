@@ -1,6 +1,9 @@
 import XCTest
+import SBTUITestTunnelClient
 
-final class LoginPage: Page {
+class LoginPage: Page {
+    
+    private let viewController = Page.app.otherElements[AccessibilityIds.loginViewController.rawValue].firstMatch
     private let signInButton = Page.app.buttons[AccessibilityIds.gitHubSignInButton.rawValue].firstMatch
     private let personalTokenButton = Page.app.buttons[AccessibilityIds.personalTokenLoginButton.rawValue].firstMatch
     private let personalTokenTextField = Page.app.textFields[AccessibilityIds.personalTokenTextField.rawValue].firstMatch
@@ -9,6 +12,10 @@ final class LoginPage: Page {
     private let signInAlertButton = Page.app.alerts.buttons[Constants.Strings.signin].firstMatch
     private let okAlertButton = Page.app.alerts.buttons[Constants.Strings.ok].firstMatch
     private let errorAlert = Page.app.alerts[AccessibilityIds.errorAlertView.rawValue].firstMatch
+    
+    override func waitForPageExistance() {
+        viewController.wait(.exists, withIn: 2)
+    }
     
     private func enterPesonalAccessToken(_ token: String) {
         let textField = personalTokenTextField

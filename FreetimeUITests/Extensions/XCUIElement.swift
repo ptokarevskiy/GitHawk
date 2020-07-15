@@ -28,7 +28,7 @@ public extension XCUIElement {
     
     private func clearTextField() {
         let app = XCUIApplication()
-        let deleteButton = app.keys[XCUIKeyboardKey.delete.rawValue]
+        let deleteButton = app.keys["delete"]
         var previousValueLength = 0
         while self.text.count != previousValueLength {
             previousValueLength = self.text.count
@@ -40,5 +40,19 @@ public extension XCUIElement {
         tap()
         clearTextField()
         typeText(text)
+    }
+    
+    enum UIStatus: String {
+        case exists = "exists == true"
+        case notExists = "exists == false"
+        case hittable = "isHittable == true"
+    }
+
+    func wait(_ status: UIStatus, withIn timeout: TimeInterval = 0.1) {
+        let expectation = XCTNSPredicateExpectation(predicate: NSPredicate(format: status.rawValue), object: self)
+        let result = XCTWaiter.wait(for: [expectation], timeout: timeout)
+        if (result == .timedOut) {
+            XCTFail(expectation.description)
+        }
     }
 }

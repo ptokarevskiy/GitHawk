@@ -48,7 +48,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // setup content size category change handler
         UIContentSizeCategoryChangeHandler.shared.setup()
 
+        //Reset application state for UI Tests
+        if CommandLine.arguments.contains("--uitests") {
+            resetState()
+        }
+
         return true
+    }
+
+    fileprivate func resetState() {
+        print("Running in testing mode, resetting NSUserDefaults")
+        if let bundleID = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundleID)
+        }
     }
 
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {

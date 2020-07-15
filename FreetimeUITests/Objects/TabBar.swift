@@ -1,6 +1,7 @@
 import XCTest
 
 protocol TabBar {
+    
     func goToInbox() -> InboxPage
     func gotoSearchPage() -> SearchPage
     func gotoBookmarksPage() -> BookmarksPage
@@ -8,20 +9,21 @@ protocol TabBar {
 }
 
 extension TabBar {
+    
     private var inboxButton: XCUIElement {
-        return Page.app.buttons[TabBarButtons.inboxButton.rawValue].firstMatch
+        return Page.app.buttons[AccessibilityIds.inboxTabBarItem.rawValue].firstMatch
     }
     
     private var searchButton: XCUIElement {
-        return Page.app.buttons[TabBarButtons.s].firstMatch
+        return Page.app.buttons[AccessibilityIds.searchTabBarItem.rawValue].firstMatch
     }
     
     private var bookmarksButton: XCUIElement {
-        return Page.app.buttons[Tab].firstMatch
+        return Page.app.buttons[AccessibilityIds.bookmarksTabBarItem.rawValue].firstMatch
     }
     
     private var settingsButton: XCUIElement {
-        return Page.app.buttons[ATba].firstMatch
+        return Page.app.buttons[AccessibilityIds.settingsTabBarItem.rawValue].firstMatch
     }
     
     @discardableResult
